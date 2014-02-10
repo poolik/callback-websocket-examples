@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="websocket-callback-demo">
+<head>
+    <title>Callback websocket example</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/grid.css" rel="stylesheet">
+</head>
+<body>
+<div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 text-center"><h1>Callback Websocket Example</h1></div>
+    </div>
+    <div class="row" ng-controller="DemoController">
+        <div class="col-md-6 col-md-offset-3">
+            <form role="form">
+                <div class="form-group">
+                    <label for="firstName">Your name:</label>
+                    <input type="text" class="form-control" ng-model="firstName" id="firstName"
+                           placeholder="Your name:">
+                </div>
+                <button type="submit" class="btn btn-default" ng-click="send()">
+                    <span>Send request</span>
+                    <img ng-show="isLoading" src="images/ajax-loader.gif" id="loading-indicator" />
+                </button>
+            </form>
+            <h3>Response:</h3>
+            <pre>{{response | json}}</pre>
+        </div>
+    </div>
+</div>
+
+<script src="js/lib/angular.min.js"></script>
+<script src="js/lib/angular-websocket-callback.js"></script>
+<script src="js/app/app.js"></script>
+</body>
+</html>

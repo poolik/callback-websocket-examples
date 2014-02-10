@@ -1,4 +1,4 @@
-callback-websocket
-==================
+callback-websocket-examples
+===========================
 
-A simple way to create request-response websockets
+Examples how to use callback-websocket in a embedded jar or simple war file
