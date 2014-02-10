@@ -2,14 +2,14 @@
 angular.module('angular.websocket.callback', []).factory('WebSocketService', ['$q', '$rootScope', '$timeout', '$log', function($q, $rootScope, $timeout, $log) {
 
     var service = {};
-    service.ws = {};
+    var ws = {};
     var requestCallbacks = {};
     var MAX_CONCURRENT_REQUESTS = 1000;
     var currentCallbackId = 0;
     var timeout = {};
 
     function ping () {
-        service.ws.send("PING");
+        ws.send("PING");
         timeout = $timeout(ping, 180000);
     }
 
@@ -18,7 +18,7 @@ angular.module('angular.websocket.callback', []).factory('WebSocketService', ['$
     };
 
     service.connect = function(wsUrl) {
-        if (service.ws && service.ws.readyState == WebSocket.OPEN) {
+        if (ws && ws.readyState == WebSocket.OPEN) {
             return false;
         }
 
@@ -45,13 +45,13 @@ angular.module('angular.websocket.callback', []).factory('WebSocketService', ['$
             else service.callback(data);
         };
 
-        service.ws = websocket;
+        ws = websocket;
         return true;
     };
 
     // Close the WebSocket connection
     service.disconnect = function() {
-        service.ws.close();
+        ws.close();
     };
 
     function listener(response) {
@@ -102,7 +102,7 @@ angular.module('angular.websocket.callback', []).factory('WebSocketService', ['$
             cb:defer
         };
         request.callbackId = callbackId;
-        service.ws.send(JSON.stringify(request));
+        ws.send(JSON.stringify(request));
         return defer.promise;
     }
 
