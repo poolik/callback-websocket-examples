@@ -4,6 +4,7 @@ import com.poolik.websocket.callback.WebSocketRequest;
 import com.poolik.websocket.callback.WebSocketRequestHandler;
 import com.poolik.websocket.callback.WebSocketResponse;
 import com.poolik.websocket.callback.request.RequestType;
+import com.poolik.websocket.callback.response.StringResponse;
 import com.poolik.websocket.callback.util.Pair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,14 +23,6 @@ public class HelloWorldHandler implements WebSocketRequestHandler {
   @Override
   public WebSocketResponse handle(WebSocketRequest request) throws Exception {
     log.info("Recieved request: " + request);
-    return new HelloWorldResponse(request.getRequestBody());
-  }
-
-  class HelloWorldResponse implements WebSocketResponse {
-    public final String greeting;
-
-    HelloWorldResponse(String firstname) {
-      this.greeting = "Hello " + firstname;
-    }
+    return new StringResponse("Hello " + request.getRequestBody());
   }
 }
