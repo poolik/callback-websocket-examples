@@ -28,7 +28,7 @@
     </dependencies>
 
     <build>
-        <finalName>websocket-callback-example</finalName>
+        <finalName>embedded-jar-example</finalName>
         <resources>
             <resource>
                 <directory>../</directory>

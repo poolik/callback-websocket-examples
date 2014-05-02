@@ -10,7 +10,7 @@ To run the example simply
 1. build the .jar:
 ```bash
     git clone git@github.com:poolik/callback-websocket-examples.git
-    cd callback-websocket-examples/performance-comparision
+    cd callback-websocket-examples/performance-comparison
     mvn clean install
 ```
 
