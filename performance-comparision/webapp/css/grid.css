@@ -1,0 +1,25 @@
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+h4 {
+  margin-top: 25px;
+}
+.row {
+  margin-bottom: 20px;
+  margin-left: -5px;
+  margin-right: -5px;
+}
+.row .row {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+[class*="col-"] {
+  padding: 5px 5px 5px 5px;
+}
+
+hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

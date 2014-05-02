@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="websocket-callback-demo">
+<head>
+    <title>callback-websocket performance comparison</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/grid.css" rel="stylesheet">
+</head>
+<body>
+<div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center"><h1>callback-websocket performance comparison</h1></div>
+    </div>
+    <div class="row" ng-controller="PerformanceController">
+        <form role="form">
+            <div class="col-md-4 col-md-offset-1">
+                <div class="form-group">
+                    <label for="nrOfRequests">Nr of requests:</label>
+                    <input type="number" min="1" max="10000" class="form-control" ng-model="nrOfRequests"
+                           id="nrOfRequests">
+                </div>
+                <button type="submit" ng-disabled="isLoading" class="btn btn-default" style="margin-bottom: 10px;"
+                        ng-click="sendRequests()">
+                    <span>Send requests</span>
+                    <img ng-show="isLoading" src="images/ajax-loader.gif" id="loading-indicator"/>
+                </button>
+                <pre>Status:{{status|json}}</pre>
+            </div>
+        </form>
+
+        <div class="col-md-6 ">
+            <highchart id="chart1" config="chartConfig" class="span10"></highchart>
+        </div>
+        <div class="col-md-4 col-md-offset-1">
+            <h3>Raw socket response data:</h3>
+            <pre>{{websocketTotals}}</pre>
+        </div>
+        <div class="col-md-4 col-md-offset-1">
+            <h3>Raw ajax response data:</h3>
+            <pre>{{servletTotals}}</pre>
+        </div>
+    </div>
+</div>
+
+<script src="js/lib/angular.js"></script>
+<script src="js/lib/angular-websocket-callback.js"></script>
+<script src="js/lib/highcharts-all.js"></script>
+<script src="js/lib/highcharts-ng.js"></script>
+<script src="js/app/app.js"></script>
+</body>
+</html>

@@ -10,6 +10,7 @@
     <modules>
         <module>embedded-jar-example</module>
         <module>war-example</module>
+        <module>performance-comparision</module>
     </modules>
 
     <modelVersion>4.0.0</modelVersion>
