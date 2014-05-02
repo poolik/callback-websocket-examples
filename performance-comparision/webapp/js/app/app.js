@@ -89,7 +89,7 @@ var PerformanceController = function ($scope, $window, $http, WebSocketService) 
         title: {
             text: 'Performance comparison chart'
         },
-        xAxis: {currentMin: 0, currentMax: 10, minRange: 1},
+        xAxis: {currentMin: 0, minRange: 1},
         yAxis: {title:{text:"ms"}},
         loading: false
     }
