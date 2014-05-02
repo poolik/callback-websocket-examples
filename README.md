@@ -7,5 +7,5 @@ Full stack examples how to use callback-websocket in a embedded jar or simple wa
 an example of how to use the callback-websocket library as a runnable jar file (using an embedded Jetty)
 2. [war-example](https://github.com/poolik/callback-websocket-examples/tree/master/war-example) - An example of how to use
  the callback-websocket library as part of a standard .war file.
-3. [performance-comparision](https://github.com/poolik/callback-websocket-examples/tree/master/comparision) - An example application to measure
+3. [performance-comparison](https://github.com/poolik/callback-websocket-examples/tree/master/comparison) - An example application to measure
 the performance differences between the standard AngularJS $http service and the WebSocketService.

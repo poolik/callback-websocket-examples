@@ -1,7 +1,7 @@
-performance-comparision
+performance-comparison
 ===========================
 
-Performance comparision between using the standard ```$http``` service and the callback-websocket provided
+Performance comparison between using the standard ```$http``` service and the callback-websocket provided
 ```WebSocketService```
 
 # Running
