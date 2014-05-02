@@ -30,7 +30,10 @@ public class Launcher {
     http.setIdleTimeout(600000); //10min
     server.addConnector(http);
 
-    WebAppContext context = new WebAppContext("webapp", "/websocket");
+    WebAppContext context = new WebAppContext();
+    String webDir = Launcher.class.getClassLoader().getResource("webapp").toExternalForm();
+    context.setResourceBase(webDir);
+    context.setContextPath("/websocket");
     context.addServlet(HelloServlet.class, "/helloViaServlet");
     server.setHandler(context);
 
